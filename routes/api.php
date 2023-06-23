@@ -19,4 +19,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/eventos/buscar', [EventController::class, 'buscar']);
-Route::apiResource("eventos", EventController::class);

@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index'])->name('index');
-Route::group(['prefix' => 'eventos'], function () {
-    Route::get('/{id}', [EventController::class, 'show']);
-});
+
+
 
 Route::middleware([
     'auth:sanctum',
@@ -19,3 +18,5 @@ Route::middleware([
         Route::delete('/{id}', [EventController::class, 'destroy']);
     });
 });
+
+Route::get('eventos/{id}', [EventController::class, 'show']);
