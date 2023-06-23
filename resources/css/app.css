@@ -136,7 +136,7 @@ section {
 
 .home {
     background: url("https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2023/01/23/16744884668571.jpg")
-        no-repeat rgba(0, 0, 0, 0.5);
+        no-repeat rgba(0, 0, 0, 0.673);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -145,6 +145,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.full {
+    height: 100vh;
 }
 
 .home .flex {
@@ -159,7 +163,7 @@ section {
     border-radius: 0.5rem;
     padding: 2rem;
     width: 50rem;
-    backdrop-filter: blur(0.4rem);
+    backdrop-filter: blur(0.8rem);
 }
 
 .home .flex form h3 {
@@ -316,4 +320,48 @@ section {
 
 .buy-button:hover {
     background-color: #45a049;
+}
+
+/* Estilos para el formulario de eventos */
+
+.form-container {
+    background: var(--light-bg);
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.form-group {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-label {
+    color: var(--white);
+    font-size: 1.8em;
+}
+
+.form-control {
+    width: 100%;
+    background: var(--light-black);
+    color: var(--white);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.event-form .btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
 }

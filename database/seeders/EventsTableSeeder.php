@@ -23,31 +23,46 @@ class EventsTableSeeder extends Seeder
                 'nombre' => 'Electro Party',
                 'fecha' => Carbon::create('2023', '12', '01'),
                 'url_imagen' => 'https://img.freepik.com/psd-gratis/club-dj-party-flyer-publicacion-redes-sociales_505751-3058.jpg',
-                'descripcion' => 'Descripción del evento 1'
+                'descripcion' => 'Descripción del evento 1',
+                'precioBoleta' => '10000',
+                'ubicacion' => 'Calle 123',
+                'maximoBoletas' => '100',
             ],
             [
                 'nombre' => 'Concierto de rock',
                 'fecha' => Carbon::create('2023', '12', '02'),
                 'url_imagen' => 'https://img.freepik.com/vector-gratis/cartel-evento-musical-foto-2021_52683-42065.jpg?w=2000',
-                'descripcion' => 'Descripción del evento 2'
+                'descripcion' => 'Descripción del evento 2',
+                'precioBoleta' => '20000',
+                'ubicacion' => 'Calle 456',
+                'maximoBoletas' => '200',
             ],
             [
                 'nombre' => 'Concurso de baile',
                 'fecha' => Carbon::create('2024', '01', '02'),
                 'url_imagen' => 'https://mir-s3-cdn-cf.behance.net/project_modules/hd/9c86b893969355.5e727918c4ea4.png',
-                'descripcion' => 'Descripción del evento 3'
+                'descripcion' => 'Descripción del evento 3',
+                'precioBoleta' => '30000',
+                'ubicacion' => 'Calle 789',
+                'maximoBoletas' => '300',
             ],
             [
                 'nombre' => 'Concierto',
                 'fecha' => Carbon::create('2021', '11', '23'),
                 'url_imagen' => 'https://mir-s3-cdn-cf.behance.net/project_modules/hd/abcb99135746173.61ed7d88dfc36.png',
-                'descripcion' => 'Descripción del evento 4'
+                'descripcion' => 'Descripción del evento 4',
+                'precioBoleta' => '40000',
+                'ubicacion' => 'Calle 101112',
+                'maximoBoletas' => '400',
             ],
             [
                 'nombre' => 'Pool Party',
                 'fecha' => Carbon::create('2023', '10', '12'),
                 'url_imagen' => 'https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/1631/posts/32261/image/event%20flyer%20design%20template.jpg',
-                'descripcion' => 'Descripción del evento 5'
+                'descripcion' => 'Descripción del evento 5',
+                'precioBoleta' => '50000',
+                'ubicacion' => 'Calle 131415',
+                'maximoBoletas' => '500',
             ],
 
         ];

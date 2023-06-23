@@ -37,11 +37,14 @@ class EventController extends Controller
         $event = new Event();
         $event->nombre = $request->input('nombre');
         $event->fecha = $request->input('fecha');
-        $event->url_imagen = $request->input('url_imagen');
+        $event->url_imagen = $request->input('linkImagen');
         $event->descripcion = $request->input('descripcion');
+        $event->precioBoleta = $request->input('precioBoleta');
+        $event->ubicacion = $request->input('ubicacion');
+        $event->maximoBoletas = $request->input('maximoBoletas');
         $event->save();
 
-        return redirect()->route('events.index')->with('success', 'Evento creado correctamente');
+        return redirect()->route('index')->with('success', 'Evento creado correctamente');
     }
 
     public function show(Event $event)

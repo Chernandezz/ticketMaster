@@ -30,12 +30,20 @@
             <a href="/" class="logo">Eventia.</a>
 
             <nav class="customNavbar">
-                <a href="contact.html">servicio al cliente</a>
                 @auth
-                    <a href="{{ url('/events/create') }}"
+                    <a href="{{ url('/eventos/crear') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Crear
                         Evento</a>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Cerrar sesión
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 @else
+                    <a href="contact.html">servicio al cliente</a>
                     <a href="{{ route('login') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Ingresar</a>
 
@@ -74,19 +82,6 @@
     <section class="grid-container" id="eventResults">
     </section>
 
-    <section>
-        @auth
-            <a href="{{ route('logout') }}"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Cerrar sesión
-            </a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-
-        @endauth
-    </section>
 
 
     <!-- home section ends -->

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 
-Route::get('/', [EventController::class, 'index']);
+Route::get('/', [EventController::class, 'index'])->name('index');
 
 Route::middleware([
     'auth:sanctum',

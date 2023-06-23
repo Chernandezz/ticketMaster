@@ -18,6 +18,9 @@ return new class extends Migration
             $table->date("fecha");
             $table->string("url_imagen");
             $table->string("descripcion");
+            $table->integer("precioBoleta");
+            $table->string("ubicacion");
+            $table->integer("maximoBoletas");
         });
     }
 
