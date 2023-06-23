@@ -17,7 +17,6 @@ export default {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
         },
-        screens: {},
     },
 
     plugins: [forms, typography],

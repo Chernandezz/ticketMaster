@@ -58,7 +58,7 @@ body {
     /* padding-bottom: 7rem; */
 }
 
-.container {
+.cont {
     padding-top: 10rem;
 }
 
@@ -116,14 +116,14 @@ section {
     color: var(--main-color);
 }
 
-.header .flex .navbar a {
+.header .flex .customNavbar a {
     margin-left: 2rem;
     font-size: 1.8rem;
     color: var(--light-white);
     transition: 0.2s linear;
 }
 
-.header .flex .navbar a:hover {
+.header .flex .customNavbar a:hover {
     color: var(--white);
 }
 
@@ -212,7 +212,7 @@ section {
         position: relative;
     }
 
-    .header .flex .navbar {
+    .header .flex .customNavbar {
         position: absolute;
         top: 100%;
         left: 2rem;
@@ -225,12 +225,12 @@ section {
         padding: 1.5rem 0.5rem;
     }
 
-    .header .flex .navbar.active {
+    .header .flex .customNavbar.active {
         transform: scale(1);
         transition: 0.2s linear;
     }
 
-    .header .flex .navbar a {
+    .header .flex .customNavbar a {
         display: block;
         padding: 1rem;
         margin: 0.5rem 1rem;
@@ -238,7 +238,7 @@ section {
         border-radius: 0.5rem;
     }
 
-    .header .flex .navbar a:hover {
+    .header .flex .customNavbar a:hover {
         background-color: var(--light-bg);
     }
 

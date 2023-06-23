@@ -26,11 +26,9 @@
 
         <section class="flex">
 
-            <a href="home.html" class="logo">Eventia.</a>
+            <a href="/" class="logo">Eventia.</a>
 
-            <nav class="navbar">
-                <a href="home.html">inicio</a>
-                <a href="events.html">eventos</a>
+            <nav class="customNavbar">
                 <a href="contact.html">servicio al cliente</a>
                 @auth
                     <a href="{{ url('/dashboard') }}"
@@ -57,7 +55,7 @@
 
     <!-- home section starts  -->
 
-    <div class="container home">
+    <div class="cont home">
 
         <section class="flex">
 
@@ -72,37 +70,21 @@
 
     </div>
 
+    ...
     <section class="grid-container">
-        <!-- Repite esta sección para cada evento -->
-        <div class="card">
-            <img src="https://img.freepik.com/psd-gratis/club-dj-party-flyer-publicacion-redes-sociales_505751-3058.jpg"
-                alt="Evento">
-            <div class="card-content">
-                <h2>Ballenato</h2>
-                <p>Fecha del evento</p>
-                <button class="buy-button">Comprar</button>
+        @foreach ($events as $event)
+            <div class="card">
+                <img src="{{ $event->url_imagen }}" alt="Evento">
+                <div class="card-content">
+                    <h2>{{ $event->nombre }}</h2>
+                    <p>{{ $event->fecha }}</p>
+                    <button class="buy-button">Comprar</button>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="https://img.freepik.com/vector-gratis/cartel-evento-musical-foto-2021_52683-42065.jpg?w=2000"
-                alt="Evento">
-            <div class="card-content">
-                <h2>Concierto</h2>
-                <p>Fecha del evento</p>
-                <button class="buy-button">Comprar</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/9c86b893969355.5e727918c4ea4.png"
-                alt="Evento">
-            <div class="card-content">
-                <h2>Reunion</h2>
-                <p>Fecha del evento</p>
-                <button class="buy-button">Comprar</button>
-            </div>
-        </div>
-        <!-- Fin de la sección de eventos -->
+        @endforeach
     </section>
+    ...
+
 
 
     <!-- home section ends -->
