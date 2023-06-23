@@ -10,9 +10,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::group(['prefix' => 'eventos'], function () {
+        Route::get('/crear', [EventController::class, 'create']);
+        Route::post('/', [EventController::class, 'store']);
+    });
 });
-
-Route::resource('events', EventController::class);

@@ -32,17 +32,17 @@
             <nav class="customNavbar">
                 <a href="contact.html">servicio al cliente</a>
                 @auth
-                    <a href="{{ url('/dashboard') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    <a href="{{ url('/events/create') }}"
+                        class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Crear
+                        Evento</a>
                 @else
                     <a href="{{ route('login') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                        in</a>
+                        class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Ingresar</a>
 
-                    @if (Route::has('register'))
+                    {{-- @if (Route::has('register'))
                         <a href="{{ route('register') }}"
                             class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                    @endif
+                    @endif --}}
                 @endauth
             </nav>
 
@@ -74,6 +74,19 @@
     <section class="grid-container" id="eventResults">
     </section>
 
+    <section>
+        @auth
+            <a href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Cerrar sesión
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+
+        @endauth
+    </section>
 
 
     <!-- home section ends -->
@@ -105,8 +118,12 @@
             }
         }
 
-        document.getElementById('search').addEventListener('input', function(event) {
-            buscarEventos(this.value);
+        document.getElementById('search').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // añade esto
+                buscarEventos(this.value);
+            }
+
         });
 
         document.getElementById('searchButton').addEventListener('click', function(event) {
