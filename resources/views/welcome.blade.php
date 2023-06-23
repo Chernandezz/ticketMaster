@@ -13,6 +13,9 @@
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- custom css file link  -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -106,7 +109,16 @@
             <div class="card-content">
                 <h2>${ evento.nombre }</h2>
                 <p>${ evento.fecha }</p>
-                <a href="/eventos/${ evento.id }" class="buy-button">Mas Info</a>
+                <div class="btnsEvento">
+                    <a href="/eventos/${ evento.id }" class="buy-button">Mas Info</a>
+                    @auth
+                        <a href="/eventos/${ evento.id }/editar" class="buy-button editarbtn"><i class="fa-solid fa-pencil"></i></a>
+                        <form action="/eventos/${ evento.id }" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="buy-button eliminarbtn"><i class="fa-solid fa-trash"></i></button>
+                    @endauth
+                </div>
 
             </div>
         </div>

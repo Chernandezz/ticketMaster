@@ -338,32 +338,51 @@ section {
 }
 
 .card-content h2 {
-    font-size: 1.5em;
+    font-size: 2em;
     margin-bottom: 10px;
 }
 
 .card-content p {
-    font-size: 1.2em;
+    font-size: 1.6em;
     margin-bottom: 20px;
 }
 
 .buy-button {
     background-color: #4caf50;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.1em;
-    margin: auto;
+    font-size: 1.5em;
     cursor: pointer;
     border: none;
     border-radius: 5px;
     transition: 0.3s;
 }
-
 .buy-button:hover {
     background-color: #45a049;
+}
+.editarbtn {
+    background-color: yellow;
+    color: #000;
+    padding: 9px 15px;
+}
+
+.editarbtn:hover {
+    background-color: yellow;
+}
+.eliminarbtn {
+    background-color: red;
+    padding: 9px 15px;
+}
+.eliminarbtn:hover {
+    background-color: red;
+}
+.btnsEvento {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
 }
 
 /* Estilos para el formulario de eventos */

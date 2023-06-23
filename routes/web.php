@@ -16,5 +16,6 @@ Route::middleware([
     Route::group(['prefix' => 'eventos'], function () {
         Route::get('/crear', [EventController::class, 'create']);
         Route::post('/', [EventController::class, 'store']);
+        Route::delete('/{id}', [EventController::class, 'destroy']);
     });
 });
