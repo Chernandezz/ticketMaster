@@ -12,6 +12,7 @@
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- custom css file link  -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -59,37 +60,63 @@
 
         <section class="flex">
 
-            <form action="" method="post">
+            <form id="searchForm">
                 <h3>buscador de eventos</h3>
-                <input type="text" name="location" required maxlength="50" placeholder="ingresar nombre del evento"
+                <input type="text" id="search" required maxlength="50" placeholder="ingresar nombre del evento"
                     class="box">
-                <input type="submit" value="buscar evento" name="search" class="btn">
+                <input type="submit" value="buscar evento" id="searchButton" class="btn">
             </form>
 
         </section>
 
     </div>
 
-    ...
-    <section class="grid-container">
-        @foreach ($events as $event)
-            <div class="card">
-                <img src="{{ $event->url_imagen }}" alt="Evento">
-                <div class="card-content">
-                    <h2>{{ $event->nombre }}</h2>
-                    <p>{{ $event->fecha }}</p>
-                    <button class="buy-button">Comprar</button>
-                </div>
-            </div>
-        @endforeach
+    <section class="grid-container" id="eventResults">
     </section>
-    ...
 
 
 
     <!-- home section ends -->
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        async function buscarEventos(query = "") {
+            const response = await fetch(`/api/eventos/buscar?search=${query}`);
+            const data = await response.json();
+            mostrarEventos(data.eventos);
+        }
+
+        function mostrarEventos(eventos) {
+            const eventsRow = document.getElementById('eventResults');
+            eventsRow.innerHTML = '';
+
+            for (let evento of eventos) {
+                eventsRow.innerHTML += `
+        <div class="card">
+            <img src="${ evento.url_imagen }" alt="Evento">
+            <div class="card-content">
+                <h2>${ evento.nombre }</h2>
+                <p>${ evento.fecha }</p>
+                <button class="buy-button">Comprar</button>
+            </div>
+        </div>
+    `;
+            }
+        }
+
+        document.getElementById('search').addEventListener('input', function(event) {
+            buscarEventos(this.value);
+        });
+
+        document.getElementById('searchButton').addEventListener('click', function(event) {
+            event.preventDefault(); // añade esto
+            const searchValue = document.getElementById('search').value;
+            buscarEventos(searchValue);
+        });
+
+        buscarEventos();
+    </script>
 
 </body>
 

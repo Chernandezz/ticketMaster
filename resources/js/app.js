@@ -32,15 +32,3 @@ AOS.init({
     duration: 400,
     delay: 200,
 });
-
-document.querySelector("#search").addEventListener("input", function () {
-    let searchQuery = this.value;
-
-    // Hacer una solicitud AJAX a la API de eventos
-    fetch(`/api/events/search?query=${searchQuery}`)
-        .then((response) => response.text())
-        .then((data) => {
-            // Actualizar el div de resultados con los nuevos datos
-            document.querySelector("#eventResults").innerHTML = data;
-        });
-});

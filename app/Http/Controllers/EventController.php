@@ -19,6 +19,19 @@ class EventController extends Controller
         return view('events.create');
     }
 
+    public function buscar(Request $request)
+    {
+        $search = $request->input('search');
+
+        if ($search) {
+            $eventos = Event::where('nombre', 'like', "%$search%")->get();
+        } else {
+            $eventos = Event::all();
+        }
+
+        return response()->json(['eventos' => $eventos], 200);
+    }
+
     public function store(Request $request)
     {
         $event = new Event();
