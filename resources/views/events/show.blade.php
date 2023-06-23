@@ -1,4 +1,3 @@
-</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,72 +63,34 @@
 
     <!-- home section starts  -->
 
-    <div class="cont home">
+    <div class="cont home full">
 
-        <section class="flex">
+        <section class="flex blurry">
+            <div class="event-details">
+                <img class="event-image" src="{{ $evento['url_imagen'] }}" alt="{{ $evento['nombre'] }}">
+                <div class="event-data">
 
-            <form id="searchForm">
-                <h3>buscador de eventos</h3>
-                <input type="text" id="search" required maxlength="50" placeholder="ingresar nombre del evento"
-                    class="box">
-                <input type="submit" value="buscar evento" id="searchButton" class="btn">
-            </form>
+                    <h1 class="event-name">{{ $evento['nombre'] }}</h1>
+                    <p class="event-description">{{ $evento['descripcion'] }}</p>
+                    <p class="event-location">{{ $evento['ubicacion'] }}</p>
+                    <p class="event-date">{{ $evento['fecha'] }}</p>
+                    <p class="event-price">${{ $evento['precioBoleta'] }}</p>
 
+                    <a href="#" class="btn">Comprar Boleta</a>
+                </div>
+
+            </div>
         </section>
 
+
+
     </div>
-
-    <section class="grid-container" id="eventResults">
-    </section>
-
 
 
     <!-- home section ends -->
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    <script>
-        async function buscarEventos(query = "") {
-            const response = await fetch(`/api/eventos/buscar?search=${query}`);
-            const data = await response.json();
-            mostrarEventos(data.eventos);
-        }
-
-        function mostrarEventos(eventos) {
-            const eventsRow = document.getElementById('eventResults');
-            eventsRow.innerHTML = '';
-
-            for (let evento of eventos) {
-                eventsRow.innerHTML += `
-        <div class="card">
-            <img src="${ evento.url_imagen }" alt="Evento">
-            <div class="card-content">
-                <h2>${ evento.nombre }</h2>
-                <p>${ evento.fecha }</p>
-                <a href="/eventos/${ evento.id }" class="buy-button">Mas Info</a>
-
-            </div>
-        </div>
-    `;
-            }
-        }
-
-        document.getElementById('search').addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault(); // añade esto
-                buscarEventos(this.value);
-            }
-
-        });
-
-        document.getElementById('searchButton').addEventListener('click', function(event) {
-            event.preventDefault(); // añade esto
-            const searchValue = document.getElementById('search').value;
-            buscarEventos(searchValue);
-        });
-
-        buscarEventos();
-    </script>
 
 </body>
 

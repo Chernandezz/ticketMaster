@@ -13,6 +13,7 @@
     --light-bg: rgba(255, 255, 255, 0.1);
     --white: #fff;
     --black: #000;
+    --green: #2f9c2f;
 }
 
 * {
@@ -91,7 +92,7 @@ section {
 }
 
 .btn:hover {
-    background: var(--black);
+    background: var(--green);
     color: var(--white);
 }
 
@@ -164,6 +165,49 @@ section {
     padding: 2rem;
     width: 50rem;
     backdrop-filter: blur(0.8rem);
+}
+
+.blurry {
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 70%;
+    backdrop-filter: blur(0.8rem);
+}
+
+.event-details {
+    padding: 20px;
+    text-align: center;
+    color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.event-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-details .event-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.event-details h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.event-details p {
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 .home .flex form h3 {

@@ -47,9 +47,10 @@ class EventController extends Controller
         return redirect()->route('index')->with('success', 'Evento creado correctamente');
     }
 
-    public function show(Event $event)
+    public function show($id)
     {
-        return view('events.show', compact('event'));
+        $evento = Event::find($id);
+        return view('events.show', ['evento' => $evento]);
     }
 
     public function edit(Event $event)
