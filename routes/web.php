@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/', [EventController::class, 'index'])->name('index');
-
+Route::get('/comprar/{id}', [PaymentController::class, 'comprar']);
 
 
 Route::middleware([

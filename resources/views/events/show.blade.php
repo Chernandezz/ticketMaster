@@ -76,7 +76,7 @@
                     <p class="event-date">{{ $evento['fecha'] }}</p>
                     <p class="event-price">${{ $evento['precioBoleta'] }}</p>
 
-                    <a href="#" class="btn">Comprar Boleta</a>
+                    <a href="/comprar/{{$evento['id']}}" class="btn">Comprar Boleta</a>
                 </div>
 
             </div>
