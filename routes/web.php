@@ -6,7 +6,8 @@ use App\Http\Controllers\PaymentController;
 
 Route::get('/', [EventController::class, 'index'])->name('index');
 Route::get('/comprar/{id}', [PaymentController::class, 'comprar']);
-
+Route::post('/pago', [PaymentController::class, 'pago']);
+Route::get('eventos/{id}', [EventController::class, 'show']);
 
 Route::middleware([
     'auth:sanctum',
@@ -19,5 +20,3 @@ Route::middleware([
         Route::delete('/{id}', [EventController::class, 'destroy']);
     });
 });
-
-Route::get('eventos/{id}', [EventController::class, 'show']);

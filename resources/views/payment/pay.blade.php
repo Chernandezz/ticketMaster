@@ -40,7 +40,7 @@
     </header>
     <section class="flex blurry">
         <div class="event-details fcolum">
-            <form action="{{ url('/eventos') }}" method="POST" class="formPayment">
+            <form action="{{ url('/pago') }}" method="POST" class="formPayment">
                 @csrf
                 <h2 class="tituloForm">Formulario de Pago</h2>
                 <div class="entradasForm">
@@ -93,6 +93,7 @@
                     <label for="total" class="form-label">Total a Pagar:</label>
                     <input type="text" id="total" name="total" class="form-control" disabled>
                 </div>
+                <input type="hidden" name="idEvento" value="{{ $event['id'] }}">
                 <button type="submit" class="submit-btn">Realizar Pago</button>
             </form>
         </div>
