@@ -46,12 +46,12 @@
                 <div class="entradasForm">
                     <div class="colForm">
                         <div class="form-group">
-                            <label for="fname" class="form-label">Nombre:</label>
-                            <input type="text" id="fname" name="fname" class="form-control">
+                            <label for="name" class="form-label">Nombre Completo:</label>
+                            <input type="text" id="name" name="name" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="lname" class="form-label">Apellido:</label>
-                            <input type="text" id="lname" name="lname" class="form-control">
+                            <label for="cedula" class="form-label">Cedula:</label>
+                            <input type="text" id="cedula" name="cedula" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Correo electrónico:</label>

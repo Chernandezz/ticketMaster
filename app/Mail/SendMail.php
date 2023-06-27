@@ -11,16 +11,16 @@ class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $testMailData;
+    public $mailData;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($testMailData)
+    public function __construct($mailData)
     {
-        $this->testMailData = $testMailData;
+        $this->mailData = $mailData;
     }
 
     /**
@@ -30,7 +30,7 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Email From AllPHPTricks.com')
-            ->view('emails.testMail');
+        return $this->subject('Compra Boletas')
+            ->view('emails.boletasMail')->with('mailData', $this->mailData);
     }
 }
