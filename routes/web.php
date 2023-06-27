@@ -4,12 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\BoletasController;
 
 Route::get('/', [EventController::class, 'index'])->name('index');
 Route::get('/comprar/{id}', [PaymentController::class, 'comprar']);
 Route::post('/pago', [PaymentController::class, 'pago']);
 Route::get('eventos/{id}', [EventController::class, 'show']);
 Route::get('/send-email', [EmailController::class, 'index']);
+Route::get('/verificarBoletas', [BoletasController::class, 'verificar']);
+Route::post('/verificarBoletas', [BoletasController::class, 'comprobar']);
+
 
 Route::middleware([
     'auth:sanctum',

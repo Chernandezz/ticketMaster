@@ -426,7 +426,8 @@ section {
     width: 100%;
     background: var(--light-black);
     color: black;
-    padding: 10px;
+    height: 70px;
+    text-align: center;
     margin-bottom: 10px;
     border-radius: 5px;
 }
@@ -481,7 +482,7 @@ section {
 }
 
 .submit-btn {
-    background-color: var(--main-color);
+    background-color: var(--green);
     color: var(--white);
     padding: 10px 15px;
     cursor: pointer;

@@ -34,6 +34,9 @@
 
             <nav class="customNavbar">
                 @auth
+                    <a href="{{ url('/verificarBoletas') }}"
+                        class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Verificar
+                        Boletas</a>
                     <a href="{{ url('/eventos/crear') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Crear
                         Evento</a>
