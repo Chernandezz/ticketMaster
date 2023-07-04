@@ -49,7 +49,7 @@
                         @csrf
                     </form>
                 @else
-                    <a href="contact.html">servicio al cliente</a>
+                    <a href="contact.html">Servicio al cliente</a>
                     <a href="{{ route('login') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Ingresar</a>
 
@@ -78,7 +78,7 @@
                 <h3 class="tituloForm">buscador de eventos</h3>
                 <input type="text" id="search" required maxlength="50" placeholder="ingresar nombre del evento"
                     class="inputEventos">
-                <input type="submit" value="buscar evento" id="searchButton" class="btn">
+                <input type="submit" value="Buscar evento" id="searchButton" class="btn">
             </form>
 
         </section>

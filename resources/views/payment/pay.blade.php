@@ -15,7 +15,7 @@
 </head>
 
 <body class="cont home full">
-    <header class="header" data-aos="fade-down">
+    <header class="header">
         <section class="flex">
             <a href="/" class="logo">Eventia.</a>
             <nav class="customNavbar">

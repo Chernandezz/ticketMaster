@@ -42,7 +42,7 @@
                         @csrf
                     </form>
                 @else
-                    <a href="contact.html">servicio al cliente</a>
+                    <a href="contact.html">Servicio al cliente</a>
                     <a href="{{ route('login') }}"
                         class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Ingresar</a>
 
@@ -76,7 +76,7 @@
                     <p class="event-date">{{ $evento['fecha'] }}</p>
                     <p class="event-price">${{ $evento['precioBoleta'] }}</p>
 
-                    <a href="/comprar/{{$evento['id']}}" class="btn">Comprar Boleta</a>
+                    <a href="/comprar/{{ $evento['id'] }}" class="btn">Comprar Boleta</a>
                 </div>
 
             </div>

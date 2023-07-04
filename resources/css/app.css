@@ -425,11 +425,13 @@ section {
 .form-control {
     width: 100%;
     background: var(--light-black);
-    color: black;
-    height: 70px;
+    color: var(--black);
     text-align: center;
     margin-bottom: 10px;
     border-radius: 5px;
+    padding: 10px;
+    font-size: 2rem;
+    background-color: var(--white);
 }
 
 .event-form .btn {
@@ -451,14 +453,7 @@ section {
     color: var(--white);
 }
 
-.form-control {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 1em;
-    color: var(--black);
-    background-color: var(--white);
-}
+
 
 .colForm {
     display: flex;
