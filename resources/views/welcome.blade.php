@@ -75,7 +75,7 @@
         <section class="flex">
 
             <form id="searchForm">
-                <h3 class="tituloForm">buscador de eventos</h3>
+                <h3 class="tituloForm">Buscador de eventos</h3>
                 <input type="text" id="search" required maxlength="50" placeholder="ingresar nombre del evento"
                     class="inputEventos">
                 <input type="submit" value="Buscar evento" id="searchButton" class="btn">
