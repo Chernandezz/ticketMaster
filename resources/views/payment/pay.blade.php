@@ -91,7 +91,7 @@
                 </div>
                 <div class="form-group">
                     <label for="total" class="form-label">Total a Pagar:</label>
-                    <input type="text" id="total" name="total" class="form-control" disabled>
+                    <input type="text" id="total" name="total" class="form-control">
                 </div>
                 <input type="hidden" name="idEvento" value="{{ $event['id'] }}">
                 <button type="submit" class="submit-btn">Realizar Pago</button>
