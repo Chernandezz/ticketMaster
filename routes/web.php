@@ -13,6 +13,8 @@ Route::get('eventos/{id}', [EventController::class, 'show']);
 Route::get('/send-email', [EmailController::class, 'index']);
 Route::get('/verificarBoletas', [BoletasController::class, 'verificar']);
 Route::post('/verificarBoletas', [BoletasController::class, 'comprobar']);
+Route::get('/servicioAlCliente', [BoletasController::class, 'servicioAlCliente']);
+Route::post('/servicioAlCliente', [BoletasController::class, 'enviarMensaje']);
 
 
 Route::middleware([

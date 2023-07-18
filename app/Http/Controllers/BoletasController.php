@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contacto;
 use App\Models\Boletas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreBoletasRequest;
 use App\Http\Requests\UpdateBoletasRequest;
 
@@ -15,6 +17,24 @@ class BoletasController extends Controller
     public function verificar()
     {
         return view('boletas.verificar');
+    }
+
+    public function servicioAlCliente()
+    {
+        return view('boletas.servicioAlCliente');
+    }
+
+    public function enviarMensaje(Request $request)
+    {
+
+        $testMailData = [
+            'nombre' => $request->input("name"),
+            'correo' => $request->input("email"),
+            'mensaje' => $request->input("queja")
+        ];
+
+        Mail::to('crissstianfhz@gmail.com')->send(new Contacto($testMailData));
+        return redirect()->route('index')->with('success', 'Peticion enviada correctamente');
     }
 
     /**

@@ -22,7 +22,7 @@
     <p>Si tienes alguna pregunta, no dudes en contactarnos.</p>
     <p>¡Esperamos verte en el evento!</p>
     <p>Gracias,</p>
-    <p>[Your Company]</p>
+    <p>Eventia</p>
 </body>
 
 </html>
